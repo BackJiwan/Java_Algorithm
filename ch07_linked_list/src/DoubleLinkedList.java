@@ -70,7 +70,6 @@ public class DoubleLinkedList<T> {
         }
     }
 
-    // 추가
     public boolean insertToFront(T existedData, T addData) {
         if (this.head == null) {
             this.head = new Node<T>(addData);
