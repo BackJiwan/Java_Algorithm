@@ -219,5 +219,6 @@ public class NodeMgmt {
 
         System.out.println("HEAD RIGHT RIGHT LEFT: " + myTree.head.right.right.left.value);
         System.out.println("HEAD RIGHT RIGHT RIGHT: " + myTree.head.right.right.right.value);
+        // System.out.println("HEAD RIGHT RIGHT RIGHT: " + myTree.head.right.right.right.value);
     }
 }
