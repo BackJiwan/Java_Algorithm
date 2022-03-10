@@ -52,11 +52,7 @@ public class MyHash {
             if (this.hashTable[address].key == key) {
                 return this.hashTable[address].value;
             } else {
-                // 참고: 다음 코드를 수정합니다.
-                // Integer currAddress = address + 1;
-                // 예외 케이스로, 키에 해당하는 주소가 가장 마지막 슬롯일 경우,
-                // this.hashTable[address + 1] 에 해당하는 배열은 없기 때문에,
-                // 예외 케이스에서도 동작하도록 currAddress 는 address 만 대입하고 진행합니다
+
                 Integer currAddress = address; // 수정
                 while (this.hashTable[currAddress] != null) {
                     if (this.hashTable[currAddress].key == key) {
