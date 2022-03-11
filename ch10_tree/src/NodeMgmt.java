@@ -175,12 +175,7 @@ public class NodeMgmt {
                 // parent Node 왼쪽 Child Node 인 changeNode 의 왼쪽/오른쪽 Child Node 를
                 // 모두 삭제할 currNode 의 기존 왼쪽/오른쪽 Node 로 변경
 
-                // 2021.11.09 업데이트 (참고: 코너 케이스)
-                // currNode.right 가 changeNode 일 경우, changeNode 가 currNode 자리로 올라가면서,
-                // 오른쪽에 다시 자신의 객체를 가리키는 상황이 될 수 있습니다.
-                // 이 경우 의도치 않게, 삭제할 객체를 다시 연결하는 상황이 될 수 있습니다.
-                // 특별한 코너 케이스이므로, 참고로만 코드를 업데이트를 드리며,
-                // 우선은 트리의 핵심 알고리즘 이해에 보다 초점을 맞추시는 것을 추천드립니다.
+
                 if (currNode.right != changeNode) {
                     changeNode.right = currNode.right;
                 }
