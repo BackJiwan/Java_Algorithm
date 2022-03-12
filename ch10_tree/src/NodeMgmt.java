@@ -118,9 +118,6 @@ public class NodeMgmt {
                 currNode = null;
             }
             return true;
-            // Case3-1: 삭제할 Node가 Child Node를 두 개 가지고 있을 경우
-            // 상위 코드 조건에 부합하지 않는 경우는 결국 (currNode.left != null && currNode.right != null) 이므로
-            // 별도로 else if 로 하기 보다, else 로 작
         } else {
 
             // 삭제할 Node가 Parent Node 왼쪽에 있을 때
