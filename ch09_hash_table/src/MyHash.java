@@ -77,9 +77,11 @@ public class MyHash {
         mainObject.saveData("fun-coding", "01022223333");
         mainObject.saveData("David", "01033334444");
         mainObject.saveData("Dave", "01044445555");
+        mainObject.saveData("Jiwang-kori", "01012348765");
 
         System.out.println(mainObject.getData("DaveLee"));
         System.out.println(mainObject.getData("David"));
         System.out.println(mainObject.getData("Dave"));
+        System.out.println(mainObject.getData("Jiwang-kori"));
     }
 }
