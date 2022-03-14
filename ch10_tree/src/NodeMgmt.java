@@ -7,11 +7,11 @@ public class NodeMgmt {
         if (this.head == null) {
             this.head = new Node(data);
         } else {
-            // CASE2: Node 가 하나라도 들어가 있을 때
+
             Node findNode = this.head;
             while (true) {
 
-                // CASE2-1: 현재 Node 의 왼쪽에 data 가 들어가야 할 때
+
                 if (data < findNode.value) {
                     if (findNode.left != null) {
                         findNode = findNode.left;
@@ -20,7 +20,7 @@ public class NodeMgmt {
                         break;
                     }
 
-                    // CASE2-2: 현재 Node 의 오른쪽에 data 가 들어가야 할 때
+
                 } else {
                     if (findNode.right != null) {
                         findNode = findNode.right;
