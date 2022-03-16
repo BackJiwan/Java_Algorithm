@@ -16,7 +16,7 @@ public class MyQueue<T>{ //제네릭타입의 클래스를 먼저 만든다.
         return queue.isEmpty();
     }
     public static void main(String[] args){
-        MyQueue<Integer> mq = new MyQueue<Integer>(); //미리 만들어둔 클래스(설계도)를 바탕으로 구체적인 int타입의 mq를 생성
+        MyQueue<Integer> mq = new MyQueue<Integer>();
         mq.enqueue(1);
         mq.enqueue(2);
         mq.enqueue(3);
