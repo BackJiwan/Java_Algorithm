@@ -3,7 +3,7 @@ public class NodeMgmt {
 
     public boolean insertNode(int data) {
 
-        // CASE1: Node 가 하나도 없을 때
+
         if (this.head == null) {
             this.head = new Node(data);
         } else {
