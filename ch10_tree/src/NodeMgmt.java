@@ -6,7 +6,7 @@ public class NodeMgmt {
 
         if (this.head == null) {
             this.head = new Node(data);
-        } else {
+        } else {//
    //ㅂ
             Node findNode = this.head;
             while (true) {
