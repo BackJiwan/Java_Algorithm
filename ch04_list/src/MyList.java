@@ -9,22 +9,22 @@ public class MyList<T> {
 
         Integer data_list1[][][] = {
                 {
-                        {1,2,3},
-                        {4,5,6}
+                        {1, 2, 3},
+                        {4, 5, 6}
                 },
                 {
-                        {7,8,9},
-                        {10,11,12}
+                        {7, 8, 9},
+                        {10, 11, 12}
                 }
         };
-        Integer[] data_list2 = {1,2,3,4,5};
+        Integer[] data_list2 = {1, 2, 3, 4, 5};
 
         ArrayList<Integer> list1 = new ArrayList<Integer>();
         List<Integer> list2 = new ArrayList<>();
 
         list1.add(1);
         list1.add(2);
-        list1.set(0,5);
+        list1.set(0, 5);
         list1.get(0);
         list1.size();
 
@@ -69,9 +69,11 @@ public class MyList<T> {
                 "Todoroff, Mr. Lalio"
         };
         Integer count = 0;
-        for(int i=0;i< dataset.length;i++){
-            if(dataset[i].indexOf("M") >= 0){
-            count++;
+        for (int i = 0; i < dataset.length; i++) {
+            if (dataset[i].indexOf("M") >= 0) {
+                count++;
+            }
         }
+        System.out.println(count);
     }
 }
