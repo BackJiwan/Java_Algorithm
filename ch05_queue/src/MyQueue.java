@@ -23,6 +23,7 @@ public class MyQueue<T>{ //제네릭타입의 클래스를 먼저 만든다.
         mq.enqueue(2);
         mq.enqueue(3);
         mq.enqueue(4);
+        mq.enqueue(4);
         System.out.println(mq.dequeue());
         System.out.println(mq.dequeue());
         System.out.println(mq.dequeue());
