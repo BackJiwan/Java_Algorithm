@@ -7,15 +7,13 @@ public class MyStack<T> {
     public void push(T item){
         stack.add(item);
     }
-
     public T pop(){
         if(stack.isEmpty()){
             return null;
         }
-        return stack.remove(stack.size() - 1);
+        return stack.remove(stack.size()-1);
     }
-
-    public boolean isEmpty() {
+    public boolean isEmpty(){
         return stack.isEmpty();
     }
 
@@ -23,10 +21,9 @@ public class MyStack<T> {
         MyStack<Integer> ms = new MyStack<Integer>();
         ms.push(1);
         ms.push(2);
+        ms.push(3);
         System.out.println(ms.pop());
-        ms.push(3);
-        ms.push(3);
-        ms.push(3);
+        ms.push(4);
         System.out.println(ms.pop());
         System.out.println(ms.pop());
     }
