@@ -28,5 +28,6 @@ public class MyStack<T> {
         System.out.println(ms.pop());
         System.out.println(ms.pop());
         System.out.println(ms.pop());
+        System.out.println(ms.pop());
     }
 }
