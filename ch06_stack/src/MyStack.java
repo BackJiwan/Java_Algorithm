@@ -1,7 +1,6 @@
-import java.util.Stack;
 import java.util.ArrayList;
-
-public class MyStack<T> {
+import java.util.Stack;
+public class MyStack<T>{
     private ArrayList<T> stack = new ArrayList<T>();
 
     public void push(T item){
@@ -14,7 +13,7 @@ public class MyStack<T> {
         return stack.remove(stack.size()-1);
     }
     public boolean isEmpty(){
-        return stack.isEmpty();
+        return isEmpty();
     }
 
     public static void main(String[] args) {
@@ -22,13 +21,9 @@ public class MyStack<T> {
         ms.push(1);
         ms.push(2);
         ms.push(3);
-        ms.push(9);
-        System.out.println(ms.pop());
-        ms.push(4);
         System.out.println(ms.pop());
         System.out.println(ms.pop());
-        System.out.println(ms.pop());
-        System.out.println(ms.pop());
+        ms.push(6);
         System.out.println(ms.pop());
     }
 }
