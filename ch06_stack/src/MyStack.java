@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Stack;
+
 public class MyStack<T>{
     private ArrayList<T> stack = new ArrayList<T>();
 
@@ -24,6 +25,7 @@ public class MyStack<T>{
         System.out.println(ms.pop());
         System.out.println(ms.pop());
         ms.push(6);
+        System.out.println(ms.pop());
         System.out.println(ms.pop());
     }
 }
