@@ -1,15 +1,15 @@
 import java.util.Scanner;
 
 public class Main{
-    public static void main(String[]args){
-        double i,j;
+    public static void main(String[]args) {
+        int a,b,cnt;
         Scanner sc = new Scanner(System.in);
-        i = sc.nextInt();
-        j = sc.nextInt();
-        System.out.println(i+j);
-        System.out.println(i-j);
-        System.out.println(i*j);
-        System.out.println(i/j);
-        System.out.println(i%j);
+
+        cnt = sc.nextInt();
+        for(int i = 0;i<cnt;i++){
+            a = sc.nextInt();
+            b = sc.nextInt();
+            System.out.println(a+b);
+        }
     }
 }
