@@ -13,7 +13,7 @@ public class bj10871 {
 
         StringBuilder sb = new StringBuilder();
 
-        for(int i=0;i<10;i++){
+        for(int i=0;i<n;i++){
             int a= Integer.parseInt(st2.nextToken());
             if(a<x){
                 sb.append(a+" ");
