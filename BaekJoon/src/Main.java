@@ -1,20 +1,26 @@
-import java.util.Scanner;
-public class Main{
-    public static void main(String[]args) {
-       Scanner sc = new Scanner(System.in);
+import java.io.*;
+import java.util.StringTokenizer;
 
-       int n,a,b;
-       n = sc.nextInt();
-       String[] s = new String[n];
+public class Main{
+    public static void main(String[]args) throws IOException {
+       BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+       BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+
+       int a,b;
+       int n = Integer.parseInt(br.readLine());
+
+       StringTokenizer st;
 
        for(int i=1;i<=n;i++){
-           a=sc.nextInt();
-           b=sc.nextInt();
-           s[i-1] = String.format("Case #%d: %d",i,a+b);
+           st = new StringTokenizer(br.readLine()+" ");
+           a = Integer.parseInt(st.nextToken());
+           b = Integer.parseInt(st.nextToken());
+           bw.write(String.format("Case #%d: %d + %d = %d\n",i,a,b,a+b));
        }
-       for(int i=0;i<n;i++){
-           System.out.println(s[i]);
-       }
+       br.close();
+
+       bw.flush();
+       bw.close();
     }
 }
 
