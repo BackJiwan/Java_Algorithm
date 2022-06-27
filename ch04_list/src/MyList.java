@@ -68,12 +68,12 @@ public class MyList<T> {
                 "Dwyer, Miss. Ellen",
                 "Todoroff, Mr. Lalio"
         };
-        Integer count = 0;
-        for (int i = 0; i < dataset.length; i++) {
-            if (dataset[i].indexOf("M") >= 0) {
-                count++;
+        Integer cnt=0;
+        for(Integer i=0;i<dataset.length;i++){
+            if(dataset[i].indexOf("M")>=0){
+                cnt++;
             }
         }
-        System.out.println(count);
+        System.out.println(cnt);
     }
 }
