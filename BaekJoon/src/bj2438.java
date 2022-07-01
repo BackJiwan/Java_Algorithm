@@ -17,5 +17,6 @@ public class bj2438 {
         br.close();
 
         System.out.print(sb);
+
     }
 }
