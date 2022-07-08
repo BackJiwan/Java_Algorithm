@@ -25,22 +25,29 @@ public class bj1021 {
             arr.add(Integer.parseInt(st2.nextToken()));
         }
         for(int i=0;i<m;i++){ //i는 뽑고자하는 수의 인덱스
-            if(list.peek() == arr.get(i)){ //arr.get(i)는 뽑고자 하는 수가 나온다.
-                list.poll();
+            int idx = list.indexOf(arr.get(i));
+            int half;
+
+            if(list.size() % 2 == 0){
+                half = list.size()/2 - 1;
+            }else{
+                half = list.size()/2;
             }
-            else {
-                if(list.size()-arr.get(i) > arr.get(i)){ //왼쪽으로 이동이 더 빠르다.
-                    while(list.peek() != arr.get(i)){
-                        list.addLast(list.poll());
-                        cnt++;
-                    }
-                } else{//왼쪽 오른쪽 상관없거나 오른쪽으로 이동이 더 빠르다.
-                    while(list.peek() != arr.get(i)){
-                        list.addFirst(list.pollLast());
-                        cnt++;
-                    }
+
+            if(idx <= half){ //왼쪽으로 이동이 더 빠르다.
+                for(int j =0;j<idx;j++){
+                    int temp = list.poll();
+                    list.addLast(temp);
+                    cnt++;
+                }
+            } else{//왼쪽 오른쪽 상관없거나 오른쪽으로 이동이 더 빠르다.
+                for(int j=0;j<list.size()-idx;j++){
+                    int temp = list.pollLast();
+                    list.addFirst(temp);
+                    cnt++;
                 }
             }
+            list.poll();
         }
         System.out.println(cnt);
     }
