@@ -36,14 +36,12 @@ public class bj1021 {
 
             if(idx <= half){ //왼쪽으로 이동이 더 빠르다.
                 for(int j =0;j<idx;j++){
-                    int temp = list.poll();
-                    list.addLast(temp);
+                    list.addLast(list.poll());
                     cnt++;
                 }
             } else{//왼쪽 오른쪽 상관없거나 오른쪽으로 이동이 더 빠르다.
                 for(int j=0;j<list.size()-idx;j++){
-                    int temp = list.pollLast();
-                    list.addFirst(temp);
+                    list.addFirst(list.pollLast());
                     cnt++;
                 }
             }
