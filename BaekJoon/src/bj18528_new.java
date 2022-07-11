@@ -56,6 +56,5 @@ public class bj18528_new {
         }
         br.close();
         System.out.println(sb);
-        System.out.println(sb);
     }
 }
