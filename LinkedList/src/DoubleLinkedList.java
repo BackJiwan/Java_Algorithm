@@ -33,7 +33,7 @@ public class DoubleLinkedList <T>{
         Node<T> prev = null;
         Node<T> next = null;
 
-        public Node(T data){
+        public Node(T data){ // 생성자
             this.data = data;
         }
     }
@@ -65,10 +65,10 @@ public class DoubleLinkedList <T>{
         }
     }
 
-    public T searchFromHead(T isData){
-        if(this.head == null){
+    public T searchFromHead(T isData){ // 헤드부터 탐색
+        if(this.head == null){ //
             return null;
-        } else {
+        } else { // 헤드가 null 이 아닐 경우에만 탐색
             Node<T> node = this.head;
             while(node != null){
                 if(node.data == isData){
