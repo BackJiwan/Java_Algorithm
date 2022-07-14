@@ -3,14 +3,16 @@ import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
-import java.util.LinkedList;
+import java.util.ArrayDeque;
+import java.util.Deque;
 import java.util.StringTokenizer;
 
 public class bj2346 {
     public static void main(String[] args) throws IOException{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-        LinkedList<int[]> deque = new LinkedList<>(); //풍선은 번호와 내부에 적힌 수를 가진다.{위치,종이에 적힌 수}
+        Deque<int[]> deque = new ArrayDeque<int[]>(); //풍선은 번호와 내부에 적힌 수를 가진다.{위치,종이에 적힌 수}
+        //이부분을 단순히 링크드리스트로 사용하면 메모리초과 오류가 발생한다...
         StringBuilder sb = new StringBuilder();
 
         int n = Integer.parseInt(br.readLine()); //풍선의 개수 n 입력받기
