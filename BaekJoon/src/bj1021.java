@@ -21,6 +21,7 @@ public class bj1021 {
         for(int i=1;i<=n;i++){ //큐의 크기만큼 1부터 순서대로 초기화
             list.add(i);
         }
+
         for(int i=0;i<m;i++){ //배열에 뽑고자 하는 원소를 저장
             arr.add(Integer.parseInt(st2.nextToken()));
         }
