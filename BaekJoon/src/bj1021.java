@@ -27,6 +27,7 @@ public class bj1021 {
         for(int i=0;i<m;i++){ //배열에 뽑고자 하는 원소를 저장
             arr.add(Integer.parseInt(st2.nextToken()));
         }
+
         for(int i=0;i<m;i++){ //i는 뽑고자하는 수의 인덱스
             int idx = list.indexOf(arr.get(i)); //뽑고자 하는 수의 인덱스는 매 반복마다 큐의 크기다 달라지므로 반복문의 초입에서 정의
             int half;
