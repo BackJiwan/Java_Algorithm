@@ -11,6 +11,7 @@ public class bj1406_new {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
+
         String input = br.readLine(); // 초기 문자열
         int M = Integer.parseInt(br.readLine()); // 반복횟수
 
