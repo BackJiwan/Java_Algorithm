@@ -20,9 +20,9 @@ public class bj1406_new {
             list.add(input.charAt(i));
         }
 
-        ListIterator<Character> iter = list.listIterator();
+        ListIterator<Character> iter = list.listIterator(); //list 객체에 listIterator() 메소드를 적용한 반환값을 iter 객체에 대입
 
-        while(iter.hasNext()){
+        while(iter.hasNext()){ //리스트 요소에 다음값이 없을때까지 next요소로 넘어가면서 커서의 위치를 맨뒤로 위치시킨다.
             iter.next();
         }
 
@@ -31,28 +31,28 @@ public class bj1406_new {
             char c = str.charAt(0); //명령어를 C에 담는다.
             switch (c) {
                 case 'L': //n개의 배열에서 커서는 0~n까지 가능하다. (3개의 배열에서 배열 인덱스는 0,1,2. 커서는 0,1,2,3가능)
-                    if (iter.hasPrevious()) //역방향 탐색시 하나앞의 요소를 가지고 있다면
+                    if (iter.hasPrevious()) //만약 이전 요소가 존재한다면 커서를 하나 이전으로 이동
                         iter.previous();
                     break;
                 case 'D':
-                    if (iter.hasNext())  //커서=size = 문장의 맨뒤
+                    if (iter.hasNext())  //만약 이후 요소가 존재한다면 커서를 한번 앞으로 이동
                         iter.next();
                     break;
                 case 'B':
-                    if (iter.hasPrevious()) { //커서=0 = 문장의 맨앞
+                    if (iter.hasPrevious()) { //이전요소가 존재한다면 커서를 하나 이전으로 이동하면서 지나친 요소를 삭제
                         iter.previous();
                         iter.remove();
                     }
                     break;
                 case 'P':
-                    char temp = str.charAt(2);
+                    char temp = str.charAt(2); //추가하고자 하는 문자를 add한다.
                     iter.add(temp);
                     break;
                 default:
                     break;
             }
         }
-        for(Character chr : list){
+        for(Character chr : list){ //for - each 문을 사용한다.
             bw.write(chr);
         }
         bw.flush();

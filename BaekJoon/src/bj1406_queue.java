@@ -11,14 +11,14 @@ public class bj1406_queue {
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         StringTokenizer st;
 
-        Deque<Character> stack_left = new LinkedList<>();
-        Deque<Character> stack_right = new LinkedList<>();
+        Deque<Character> queue_left = new LinkedList<>();
+        Deque<Character> queue_right = new LinkedList<>();
 
         String input = br.readLine(); //문자열 입력
         int M = Integer.parseInt(br.readLine()); //명령 횟수
 
-        for(int i=0;i<input.length();i++){ //문자열을 char단위로 쪼개서 왼쪽 스택에 적재
-            stack_left.addLast(input.charAt(i));
+        for(int i=0;i<input.length();i++){ //문자열을 char단위로 쪼개서 왼쪽 큐에 저장
+            queue_left.addLast(input.charAt(i));
         }
 
         for(int i=0;i<M;i++){
@@ -27,33 +27,33 @@ public class bj1406_queue {
 
             switch (c){
                 case 'L':
-                    if(!stack_left.isEmpty()){
-                        stack_right.addFirst(stack_left.pollLast());
+                    if(!queue_left.isEmpty()){
+                        queue_right.addFirst(queue_left.pollLast());
                     }
                     break;
                 case 'D' :
-                    if(!stack_right.isEmpty()){
-                        stack_left.addLast(stack_right.pollFirst());
+                    if(!queue_right.isEmpty()){
+                        queue_left.addLast(queue_right.pollFirst());
                     }
                     break;
                 case 'B' :
-                    if(!stack_left.isEmpty()){
-                        stack_left.pollLast();
+                    if(!queue_left.isEmpty()){
+                        queue_left.pollLast();
                     }
                     break;
                 case 'P' :
-                    stack_left.addLast(st.nextToken().charAt(0));
+                    queue_left.addLast(st.nextToken().charAt(0));
                     break;
                 default :
                     break;
             }
         }
         br.close();
-        while(!stack_left.isEmpty()){
-            bw.write(stack_left.pollFirst());
+        while(!queue_left.isEmpty()){
+            bw.write(queue_left.pollFirst());
         }
-        while(!stack_right.isEmpty()){
-            bw.write(stack_right.pollFirst());
+        while(!queue_right.isEmpty()){
+            bw.write(queue_right.pollFirst());
         }
         bw.flush();
         bw.close();

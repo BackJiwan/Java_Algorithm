@@ -8,6 +8,7 @@ import java.util.StringTokenizer;
 
 public class bj1406_stack {
     public static void main(String[] args) throws IOException{
+        long start = System.currentTimeMillis();
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         StringTokenizer st;
@@ -56,6 +57,8 @@ public class bj1406_stack {
         while(!stack_right.isEmpty()){
             bw.write(stack_right.pop());
         }
+        long end = System.currentTimeMillis();
+        System.out.println("실행시간 : " + (end - start)/1000.0);
         bw.flush();
         bw.close();
     }

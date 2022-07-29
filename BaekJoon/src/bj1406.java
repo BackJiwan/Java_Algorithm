@@ -6,11 +6,12 @@ import java.io.IOException;
 import java.util.LinkedList;
 import java.util.StringTokenizer;
 //시간초과
+
 public class bj1406 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-        LinkedList<Character> list = new LinkedList<>();
+        LinkedList<Character> list = new LinkedList<>(); //문자열 구현 = 링크드리스트
         StringTokenizer st;
 
         String input = br.readLine(); // 초기 문자열
