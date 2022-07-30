@@ -51,8 +51,8 @@ public class bj5397 {
                 while(iter.hasNext()){
                     bw.write(iter.next());
                 }
-                bw.newLine();
            }
+           bw.newLine();
        }
        br.close();
        bw.flush();
