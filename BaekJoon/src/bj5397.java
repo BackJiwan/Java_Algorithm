@@ -15,7 +15,7 @@ public class bj5397 {
 
 
        int n = Integer.parseInt(br.readLine()); //테스트케이스의 개수
-       String[] arr = new String[2];
+       String[] arr = new String[n];
        for(int i=0;i<n;i++){
            arr[i] = br.readLine();
        }
