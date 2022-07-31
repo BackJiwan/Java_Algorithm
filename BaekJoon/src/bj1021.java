@@ -24,6 +24,7 @@ public class bj1021 {
 
 
 
+
         for(int i=0;i<m;i++){ //배열에 뽑고자 하는 원소를 저장
             arr.add(Integer.parseInt(st2.nextToken()));
         }
