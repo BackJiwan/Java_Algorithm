@@ -13,6 +13,7 @@ public class bj1021 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st1,st2;
 
+
         st1 = new StringTokenizer(br.readLine());
         Integer n = Integer.parseInt(st1.nextToken()); //큐의 크기
         Integer m = Integer.parseInt(st1.nextToken()); //뽑는 숫자의 개수
