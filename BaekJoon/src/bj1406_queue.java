@@ -25,6 +25,7 @@ public class bj1406_queue {
             st = new StringTokenizer(br.readLine()," ");
             char c = st.nextToken().charAt(0);//명령어를 c에 저장
 
+
             switch (c){
                 case 'L':
                     if(!queue_left.isEmpty()){
