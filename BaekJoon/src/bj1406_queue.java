@@ -5,6 +5,7 @@ import java.io.OutputStreamWriter;
 import java.util.*;
 import java.io.IOException;
 
+
 public class bj1406_queue {
     public static void main(String[] args) throws IOException{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
