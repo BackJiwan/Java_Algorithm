@@ -3,48 +3,48 @@ import java.io.InputStreamReader;
 import java.io.IOException;
 import java.util.StringTokenizer;
 
-public class bj1991 {
-    public static class Node {
+public class bj1991_new {
+    public static class Node { //노드클래스
         Node left;
         Node right;
         char data;
 
-        Node(char data) {
+        public Node(char data) {
             this.data = data;
         }
     }
     public static class Tree {
         Node root;
 
-        public void insert(char data,char left,char right){
+        public void insert(char data_in,char left_in,char right_in){
             if(root==null){
-                if(data != '.'){
-                    root = new Node(data);
+                if(data_in != '.'){ //입력이 . 이 아닌 값이라면 data를 가지는 root 노드 생성
+                    root = new Node(data_in);
                 }
-                if(left != '.'){
-                    root.left = new Node(left);
+                if(left_in != '.'){//입력이 . 이 아닌 값이라면 data를 가지는 root 왼쪽 자식 노드 생성
+                    root.left = new Node(left_in);
                 }
-                if(right != '.'){
-                    root.right = new Node(right);
+                if(right_in != '.'){//입력이 . 이 아닌 값이라면 data를 가지는 root 오른쪽 자식 노드 생성
+                    root.right = new Node(right_in);
                 }
-            } else {
-                search(root,data,left,right);
+            } else { //root가 null이 아니라면 data의 위치를 search한다.
+                search(root,data_in,left_in,right_in);
             }
         }
 
-        public void search(Node root,char data,char left,char right){
-            if(root ==null) {
+        public void search(Node root,char data_in,char left_in,char right_in){
+            if(root ==null) { //입력받은 root가 null이라면 return한다.
                 return;
-            } else if(root.data == data){
-                if(left != '.'){
-                    root.left = new Node(left);
+            } else if(root.data == data_in){ //입력받은 data가 root의 데이터라면
+                if(left_in != '.'){ //입력받은 left값이 .이 아니라면 왼쪽 자식에 새로운 left 노드를 생성
+                    root.left = new Node(left_in);
                 }
-                if(right != '.'){
-                    root.right = new Node(right);
+                if(right_in != '.'){ //입력받은 right값이 .이 아니라면 오른쪽 자식에 새로운 right 노드를 생성
+                    root.right = new Node(right_in);
                 }
             }else{
-                search(root.left,data,left,right);
-                search(root.right,data,left,right);
+                search(root.left,data_in,left_in,right_in);
+                search(root.right,data_in,left_in,right_in);
             }
         }
 
@@ -58,7 +58,7 @@ public class bj1991 {
             }
         }
 
-        public void inOrder(Node root){
+        public void inOrder(Node root){ //왼쪽,루트,오른쪽
             if(root.left != null){
                 inOrder(root.left);
             }
@@ -68,9 +68,9 @@ public class bj1991 {
             }
         }
 
-        public void postOrder(Node root){
+        public void postOrder(Node root){ //왼쪽,오른쪽,루트
             if(root.left != null){
-                preOrder(root.left);
+                postOrder(root.left);
             }
             if(root.right != null){
                 postOrder(root.right);
