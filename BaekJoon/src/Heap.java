@@ -13,6 +13,7 @@ public class Heap {
         this.heapArray.add(data);
     }
 
+
     public boolean move_up(Integer inserted_idx) {
         if (inserted_idx <= 1) {
             return false;
