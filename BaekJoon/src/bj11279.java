@@ -7,8 +7,19 @@ import java.util.Collections;
 public class bj11279 {
     public static void main(String[] args) throws IOException{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringBuilder sb = new StringBuilder();
+        maxHeap heap = new maxHeap(0);
 
         int n = Integer.parseInt(br.readLine()); //연산의 개수 N
+        for(int i=0;i<n;i++){
+            int k = Integer.parseInt(br.readLine()); //명령
+            if(k==0){
+                sb.append(heap.pop()).append('\n');
+            } else{
+                heap.insert(k);
+            }
+        }
+        System.out.println(sb);
     }
 
 }
@@ -72,7 +83,8 @@ class maxHeap{
                     return true;
                 } else {
                     return false;
-                } else{
+                }
+            } else{
                     if (this.heapArray.get(popped_idx) < this.heapArray.get(right_child_popped_idx)) {
                         return true;
                     } else {
@@ -81,20 +93,41 @@ class maxHeap{
                 }
             }
         }
-    }
+
     public Integer pop(){
         Integer returned_data,popped_idx,left_child_popped_idx, right_child_popped_idx;
 
         if(this.heapArray.size() <= 1){
-            return null;
+            return 0;
         }
         returned_data = this.heapArray.get(1); //루트노드를 저장
         this.heapArray.set(1,this.heapArray.get(this.heapArray.size()-1)); //마지막 노드를 루트로 올려주기
         this.heapArray.remove(this.heapArray.size()-1); // 마지막 노드를 삭제
         popped_idx = 1;
 
+        while (this.move_down(popped_idx)) {
+            left_child_popped_idx = popped_idx * 2;
+            right_child_popped_idx = popped_idx * 2 + 1;
 
-
+            if (right_child_popped_idx >= this.heapArray.size()) { //오른쪽 자식만 없는 경우
+                if (this.heapArray.get(popped_idx) < this.heapArray.get(left_child_popped_idx)) {
+                    Collections.swap(this.heapArray, popped_idx, left_child_popped_idx);
+                    popped_idx = left_child_popped_idx;
+                }
+            } else { //왼쪽 오른쪽 자식 모두 있을때
+                if (this.heapArray.get(left_child_popped_idx) > this.heapArray.get(right_child_popped_idx)) {
+                    if (this.heapArray.get(popped_idx) < this.heapArray.get(left_child_popped_idx)) {
+                        Collections.swap(this.heapArray, popped_idx, left_child_popped_idx);
+                        popped_idx = left_child_popped_idx;
+                    }  else{
+                        if (this.heapArray.get(popped_idx) < this.heapArray.get(right_child_popped_idx)) {
+                            Collections.swap(this.heapArray, popped_idx, right_child_popped_idx);
+                            popped_idx = right_child_popped_idx;
+                        }
+                    }
+                }
+            }
+        }
+        return returned_data;
     }
-
 }
