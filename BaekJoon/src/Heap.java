@@ -97,6 +97,8 @@ public class Heap {
             left_child_popped_idx = popped_idx * 2;
             right_child_popped_idx = popped_idx * 2 + 1;
 
+            // 위의 move_down 메서드와 동일하게 자식노드가 왼쪽만 있는지, 둘다 있는지 확인하고
+            // 자식과 해당 노드를 Swap 해야하는 경우에 Swap 하는 조건문이다.
             if (right_child_popped_idx >= this.heapArray.size()) {
                 if (this.heapArray.get(popped_idx) < this.heapArray.get(left_child_popped_idx)) {
                     Collections.swap(this.heapArray, popped_idx, left_child_popped_idx);

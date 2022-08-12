@@ -4,31 +4,35 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class bj11279 {
+public class bj11279_new2 {
     public static void main(String[] args) throws IOException{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringBuilder sb = new StringBuilder();
-        maxHeap heap = new maxHeap(0);
+        maxHeap2 heap = new maxHeap2(0);
 
         int n = Integer.parseInt(br.readLine()); //연산의 개수 N
         for(int i=0;i<n;i++){
             int k = Integer.parseInt(br.readLine()); //명령
             if(k==0){
-                sb.append(heap.pop()).append('\n');
+                if(heap.isEmpty()){
+                    System.out.println(0);
+                } else {
+                    System.out.println(heap.pop());
+                }
             } else{
                 heap.insert(k);
             }
         }
-        System.out.println(sb.toString());
     }
 
 }
-class maxHeap{
+class maxHeap2{
+    public boolean isEmpty(){
+        return heapArray.isEmpty();
+    }
     public ArrayList<Integer> heapArray = null;
 
-    public maxHeap(Integer data){
+    public maxHeap2(Integer data){
         this.heapArray = new ArrayList<Integer>();
-        this.heapArray.add(null);
         this.heapArray.add(data);
     }
     public boolean move_up(Integer inserted_idx){
@@ -47,7 +51,6 @@ class maxHeap{
 
         if(heapArray == null){
             this.heapArray = new ArrayList<Integer>();
-            this.heapArray.add(null);
             this.heapArray.add(data);
             return true;
         } else{
@@ -85,14 +88,14 @@ class maxHeap{
                     return false;
                 }
             } else{
-                    if (this.heapArray.get(popped_idx) < this.heapArray.get(right_child_popped_idx)) {
-                        return true;
-                    } else {
-                        return false;
-                    }
+                if (this.heapArray.get(popped_idx) < this.heapArray.get(right_child_popped_idx)) {
+                    return true;
+                } else {
+                    return false;
                 }
             }
         }
+    }
 
     public Integer pop(){
         Integer returned_data,popped_idx,left_child_popped_idx, right_child_popped_idx;
