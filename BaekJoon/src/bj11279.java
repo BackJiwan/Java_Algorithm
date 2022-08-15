@@ -9,6 +9,7 @@ public class bj11279 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringBuilder sb = new StringBuilder();
         maxHeap heap = new maxHeap(0);
+        heap.pop();
 
         int n = Integer.parseInt(br.readLine()); //연산의 개수 N
         for(int i=0;i<n;i++){

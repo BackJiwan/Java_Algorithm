@@ -26,7 +26,7 @@ class maxHeap2{
 
     public maxHeap2(){ //계산의 편의를 위해서 index=0의 위치를 임의로 초기값을 설정
         this.heapArray = new ArrayList<Integer>();
-        this.heapArray.add(1);
+        this.heapArray.add(null);
     }
 
     public void insert(Integer data){
