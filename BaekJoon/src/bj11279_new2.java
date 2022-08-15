@@ -10,6 +10,7 @@ public class bj11279_new2 {
         int n = Integer.parseInt(br.readLine()); //연산의 개수 N
         maxHeap2 heap = new maxHeap2();
 
+
         for(int i=0;i<n;i++){
             int k = Integer.parseInt(br.readLine()); //입력값
             if(k==0){ //입력이 0 이라면 pop 메서드 실행
