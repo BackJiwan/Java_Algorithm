@@ -6,7 +6,6 @@ import java.io.OutputStreamWriter;
 import java.util.StringTokenizer;
 import java.io.IOException;
 
-
 public class bj23970_new {
     public static void main(String[] args) throws IOException{
         BufferedReader br =new BufferedReader(new InputStreamReader(System.in));
