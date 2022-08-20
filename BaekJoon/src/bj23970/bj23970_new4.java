@@ -4,35 +4,37 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 import java.io.IOException;
 import java.util.Arrays;
-public class bj23970_new2 {
+
+public class bj23970_new4 {
+    static int checked_idx;
     public static int check_idx(int[] arr1,int[] arr2,int size){
         int idx=0;
-            for(int i=0;i<size;i++){
-                if(arr1[i] == arr2[i]){
-                    idx++;
-                }  else{
-                    break;
-                }
+        for(int i=0;i<size;i++){
+            if(arr1[i] == arr2[i]){
+                idx++;
+            }  else{
+                break;
             }
-            return idx;
+        }
+        return idx;
     }
     public static boolean Check(int[] arr1,int[] arr2,int size){
-        int a = check_idx(arr1,arr2,size);
-            for(int i=a;i<size;i++){
-                if(arr1[i] != arr2[i]){
-                    return false; //한번이라도 요소가 다르면 바로 빠져나온다.
-                } else{
-                    continue;
-                }
+        checked_idx = check_idx(arr1,arr2,size);
+        for(int i=checked_idx;i<size;i++){
+            if(arr1[i] != arr2[i]){
+                return false; //한번이라도 요소가 다르면 바로 빠져나온다.
+            } else{
+                continue;
             }
-            return true; //다른적이 없다면 같은 배열이다.
+        }
+        return true; //다른적이 없다면 같은 배열이다.
     }
     public static boolean bsort(int[] arr1,int[] arr2,int size){
         boolean checked = false; //정렬도중 배열2와 같은 배열이 되는 경우가 있는지를 판별한다.
-            if(Check(arr1,arr2,size)){ //시작하는 배열부터 동일한지 확인해준다.
-                checked = true;
-                return true;
-            }
+        if(Check(arr1,arr2,size)){ //시작하는 배열부터 동일한지 확인해준다.
+            checked = true;
+            return true;
+        }
         int[] arr3 = new int[size];
         int[] arr4 = new int[size];
         arr3 = arr1.clone();
@@ -43,29 +45,29 @@ public class bj23970_new2 {
             return false;
         }
 
-            for(int idx=0;idx<size-1;idx++){
-                boolean swaped= false;
-                for(int idx2=0;idx2<size-1-idx;idx2++){
-                    if(arr1[idx2]>arr1[idx2+1]){
-                        int same_idx = check_idx(arr1,arr2,size);
-                        int temp = arr1[idx2];
-                        arr1[idx2] = arr1[idx2+1];
-                        arr1[idx2+1] = temp;
-                        swaped = true;
-                        if(same_idx>idx2){
-                            return false;
-                        }
-                        if(Check(arr1,arr2,size)){ //매 swap 동작때마다 배열2와 동일한배열인지 확인해준다.
-                            checked = true;
-                            return true;
-                        }
+        for(int idx=0;idx<size-1;idx++){
+            boolean swaped= false;
+            for(int idx2=0;idx2<size-1-idx;idx2++){
+                if(arr1[idx2]>arr1[idx2+1]){
+                    int same_idx = check_idx(arr1,arr2,size);
+                    int temp = arr1[idx2];
+                    arr1[idx2] = arr1[idx2+1];
+                    arr1[idx2+1] = temp;
+                    swaped = true;
+                    if(same_idx>idx2){
+                        return false;
+                    }
+                    if(Check(arr1,arr2,size)){ //매 swap 동작때마다 배열2와 동일한배열인지 확인해준다.
+                        checked = true;
+                        return true;
                     }
                 }
-                if(swaped ==false){
-                    break;
-                }
             }
-            return false;
+            if(swaped ==false){
+                break;
+            }
+        }
+        return false;
     }
 
 
