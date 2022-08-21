@@ -22,7 +22,7 @@ public class bj2750 {
         }
         br.close();
 
-        ArrayList<Integer> SortedList = sSort.sort(dataList);
+        ArrayList<Integer> SortedList = bSort.sort(dataList);
         for(int i=0;i<n;i++){
             bw.write(SortedList.get(i).toString());
             bw.newLine();
