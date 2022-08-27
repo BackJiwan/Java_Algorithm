@@ -24,6 +24,7 @@ public class bj17478 {
         chatBot(n-1);
         sb.append(bar+"라고 답변하였지.\n");
     }
+
     public static void main(String[] args) throws IOException{
         BufferedReader br =new BufferedReader(new InputStreamReader(System.in));
         int n = Integer.parseInt(br.readLine());
