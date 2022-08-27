@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.IOException;
 
+
 public class bj17478 {
     static StringBuilder sb = new StringBuilder();
     static String under = "";
