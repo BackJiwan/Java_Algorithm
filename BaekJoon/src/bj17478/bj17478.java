@@ -21,9 +21,9 @@ public class bj17478 {
         sb.append(bar+"마을 사람들은 모두 그 선인에게 수많은 질문을 했고, 모두 지혜롭게 대답해 주었지.\n");
         sb.append(bar+"그의 답은 대부분 옳았다고 하네. 그런데 어느 날, 그 선인에게 한 선비가 찾아와서 물었어.\"\n");
 
-        under += "____";
+        under += "____"; //재귀적으로 옛날얘기부분을 출력한 이후에 언더바가 변수 under에 추가된다.
         chatBot(n-1);
-        sb.append(bar+"라고 답변하였지.\n");
+        sb.append(bar+"라고 답변하였지.\n"); //언더바가 추가되기 이전의 언더바 정보는 bar변수에 있으므로 bar변수와 under 변수를 별개로 관리한다.
     }
 
     public static void main(String[] args) throws IOException{
