@@ -30,6 +30,7 @@ public class bj2447 {
         bw.flush();
         bw.close();
     }
+
     public static void star(String[][] arr,int x,int y,int n){
         if(n==1){
             arr[x][y] = "*";
