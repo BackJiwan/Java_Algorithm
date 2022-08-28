@@ -29,6 +29,7 @@ public class bj2447 {
         }
         bw.flush();
         bw.close();
+
     }
 
     public static void star(String[][] arr,int x,int y,int n){
