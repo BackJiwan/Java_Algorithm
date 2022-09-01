@@ -9,6 +9,7 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.io.IOException;
 
+
 public class bj9461_new {
     static long[] arr = new long[101];
 
