@@ -37,6 +37,7 @@ public class bj9184 {
         if(a<=0 || b<=0 || c<= 0) {
             return 1;
         }
+
         if(a>20 || b>20 || c>20){
             return arr[20][20][20] = w(20,20,20);
         }
