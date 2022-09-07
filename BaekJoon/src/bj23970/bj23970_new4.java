@@ -17,6 +17,7 @@ public class bj23970_new4 {
             }
         }
     }
+
     public static boolean Check(int[] arr1,int[] arr2,int size){
         for(int i=checked_idx;i<size;i++){
             if(arr1[i] != arr2[i]){
