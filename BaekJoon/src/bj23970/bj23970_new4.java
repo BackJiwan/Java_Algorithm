@@ -14,6 +14,7 @@ public class bj23970_new4 {
             if(arr1[i] == arr2[i]){
                 checked_idx++;
             }  else{
+
                 break;
             }
         }
