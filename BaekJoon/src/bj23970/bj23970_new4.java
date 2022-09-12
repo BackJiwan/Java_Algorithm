@@ -7,6 +7,7 @@ import java.util.Arrays;
 
 
 public class bj23970_new4 {
+
     static int checked_idx;
     public static void check_idx(int[] arr1,int[] arr2,int size,int check){
         checked_idx=check;
