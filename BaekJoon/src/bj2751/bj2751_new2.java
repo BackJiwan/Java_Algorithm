@@ -23,7 +23,6 @@ public class bj2751_new2 {
             bw.write(Integer.toString(arr[i])+"\n");
         }
         bw.close();
-
     }
     static int[] sort(int arr[],int left,int right){
         if(arr.length == 1){ //더 이상 쪼갤 필요 없을때에 return
@@ -44,7 +43,7 @@ public class bj2751_new2 {
 
         while(l<=medium && r<=right){ //왼쪽 또는 오른쪽 리스트를 순차접근하면서 작은값을 sorted 배얄에 대입후 포인터이동
             if(arr[l] <= arr[r]){ //오른쪽이 더 클경우
-                sorted[idx++] = arr[l++]; //sorted배열에 왼쪽값 저장
+                sorted[idx++] = arr[l++]; //sorted 배열에 왼쪽값 저장
             } else{ //왼쪽이 더 클경우는 오른쪽 값을 저장
                 sorted[idx++] = arr[r++];
             }

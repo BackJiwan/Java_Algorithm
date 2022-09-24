@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 
 public class bj2751_new {
     static int n;
-    static int[] sorted = new int[1000001];
+    static int[] sorted;
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringBuilder sb = new StringBuilder();
