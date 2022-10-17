@@ -37,7 +37,7 @@ public class bj11047 {
         while(remain != 0){ //remain이 0이 될때까지 반복
             if(arr[current]>remain){ //만약 남은 금액이 현재 동전의 위치보다 크다면
                 while(arr[current] > remain){ //남은 금액보다 작은 동전을 고를때까지 current를 내리기
-                    current += -1;
+                    current -= 1;
                 }
             } //탈출할 경우 current는 remain보다 작은 동전을 가리키고 있다.
             remain -= arr[current]; //remain에서 current 동전값을 제거한다.
